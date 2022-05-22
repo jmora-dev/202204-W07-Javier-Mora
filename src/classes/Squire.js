@@ -1,10 +1,19 @@
 import { Character } from './Character.js';
+import { Fighter } from './Fighter.js';
 
 export class Squire extends Character {
-	constructor(name, family, age, squireOf, fawner) {
+	emoji = '🛡';
+	constructor(name, family, age, assignTo, fawner) {
 		const communication = 'Soy un loser';
 		super(name, family, age, communication);
-		this.squireOfFighter = squireOf;
+		this.assignTo = assignTo;
 		this.fawner = fawner;
+	}
+
+	validateSquireAssign(assignTo) {
+		if (assignTo instanceof Fighter) {
+			return assignTo;
+		}
+		throw TypeError('AssignTo must be a Fighter');
 	}
 }
