@@ -1,10 +1,12 @@
 import { Character } from './Character.js';
+import { ROLES } from '../constants/roles.js';
 
 export class King extends Character {
 	emoji = '👑';
-	constructor(name, family, age, reignYears) {
+	role = ROLES.KING;
+	constructor({ img, name, family, age, reignYears }) {
 		const communication = 'Vais a morir todos';
-		super(name, family, age, communication);
+		super(img, name, family, age, communication);
 		this.reignYears = reignYears;
 	}
 }
