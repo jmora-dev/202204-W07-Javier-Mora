@@ -18,7 +18,3 @@ const onDie = (charIndex) => {
 };
 
 renderCardList(data, onSpeak, onDie);
-
-// Game of Throne:
-// Repo: https://github.com/jmora-dev/202204-W07-Javier-Mora
-// Prod: https://202204-w07-javier-mora.netlify.app/
