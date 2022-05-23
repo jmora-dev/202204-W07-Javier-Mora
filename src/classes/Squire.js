@@ -1,19 +1,21 @@
 import { Character } from './Character.js';
-import { Fighter } from './Fighter.js';
+import { ROLES } from '../constants/roles.js';
+import { validateIntegerBetweenCeroAndTen } from '../utils/validateIntegerBetweenCeroAndTen.js';
 
 export class Squire extends Character {
 	emoji = '🛡';
-	constructor(name, family, age, assignTo, fawner) {
+	role = ROLES.SQUIRE;
+	constructor(name, family, age, assignTo, fawnerLevel) {
 		const communication = 'Soy un loser';
 		super(name, family, age, communication);
 		this.assignTo = assignTo;
-		this.fawner = fawner;
+		this.fawnerLevel = validateIntegerBetweenCeroAndTen(fawnerLevel);
 	}
 
 	validateSquireAssign(assignTo) {
-		if (assignTo instanceof Fighter) {
-			return assignTo;
+		if (assignTo?.role !== ROLES.FIGHTER) {
+			throw TypeError('AssignTo must be a Fighter');
 		}
-		throw TypeError('AssignTo must be a Fighter');
+		return assignTo;
 	}
 }
