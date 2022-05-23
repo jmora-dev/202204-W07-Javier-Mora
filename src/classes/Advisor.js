@@ -3,10 +3,10 @@ import { ROLES } from '../constants/roles.js';
 export class Advisor extends Character {
 	emoji = '🎓';
 	role = ROLES.ADVISOR;
-	constructor(name, family, age, adviseCharacter) {
+	constructor({ img, name, family, age, adviseCharacter }) {
 		const communication = 'No sé por qué, pero creo que voy a morir pronto';
-		super(name, family, age, communication);
-		this.adviseCharacter = this.validateAdviseCharacter(adviseCharacter);
+		super(img, name, family, age, communication);
+		this.adviseCharacter = adviseCharacter;
 	}
 
 	validateAdviseCharacter(adviseCharacter) {

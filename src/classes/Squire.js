@@ -5,9 +5,9 @@ import { validateIntegerBetweenCeroAndTen } from '../utils/validateIntegerBetwee
 export class Squire extends Character {
 	emoji = '🛡';
 	role = ROLES.SQUIRE;
-	constructor(name, family, age, assignTo, fawnerLevel) {
+	constructor({ img, name, family, age, assignTo, fawnerLevel }) {
 		const communication = 'Soy un loser';
-		super(name, family, age, communication);
+		super(img, name, family, age, communication);
 		this.assignTo = assignTo;
 		this.fawnerLevel = validateIntegerBetweenCeroAndTen(fawnerLevel);
 	}

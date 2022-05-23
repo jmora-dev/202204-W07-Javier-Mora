@@ -1,6 +1,7 @@
 export class Character {
 	isAlive = true;
-	constructor(name, family, age, communication = '') {
+	constructor(img, name, family, age, communication = '') {
+		this.img = img;
 		this.name = name;
 		this.family = family;
 		this.age = age;
